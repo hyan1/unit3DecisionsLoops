@@ -31,7 +31,28 @@ The universe of the Game of Life is an infinite two-dimensional orthogonal
 	each generation is a pure function of the preceding one). The rules
 	continue to be applied repeatedly to create further generations.
 
+	
+* How large is the grid? is it boundless?
+  It would be 9 by 9.
+  
+* what do live cells look like?
+  Live cells would be look like square
+  
+* what do dead cells look like?
+  Dead cells would be look like circle
+  
+* what pattern is displayed? are multiple patterns available? are patterns chosen in code, chosen randomly, chosen by user
+  The initial pattern would be like a cross. 
 
+* how long does the game run? does it run forever? does it prompt the user to continue?
+  After user starts, the game would run automatically until every cell dies or no futhermore pattern.
+  
+* what is the time interval between generations?
+  One seconed
+
+* what about edge cases? does it wrap around?
+  
+	
 Nonfunctional Requirements:
 
 * the program must be implemented in Java and utilize the GridWorld platform
