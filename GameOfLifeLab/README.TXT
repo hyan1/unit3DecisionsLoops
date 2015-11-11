@@ -33,13 +33,13 @@ The universe of the Game of Life is an infinite two-dimensional orthogonal
 
 	
 * How large is the grid? is it boundless?
-  It would be 9 by 9.
+  It would be 7 by 7.
   
 * what do live cells look like?
-  Live cells would be look like square
+  Live cells would be black
   
 * what do dead cells look like?
-  Dead cells would be look like circle
+  Dead cells would be white
   
 * what pattern is displayed? are multiple patterns available? are patterns chosen in code, chosen randomly, chosen by user
   The initial pattern would be like a cross. 

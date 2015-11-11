@@ -18,8 +18,8 @@ public class GameOfLife
     private ActorWorld world;
     
     // the game board will have 5 rows and 5 columns
-    private final int ROWS = 9;
-    private final int COLS = 9;
+    private final int ROWS = 7;
+    private final int COLS = 7;
     
     /**
      * Default constructor for objects of class GameOfLife
@@ -52,16 +52,18 @@ public class GameOfLife
      */
     private void populateGame()
     {
-        // constants for the location of the three cells initially alive
-        final int X1 = 2, Y1 = 0;
-        final int X2 = 0, Y2 = 2;
-        final int X3 = 1, Y3 = 2;
+        // constants for the location of the five cells initially alive
+        final int X1 = 2, Y1 = 3;
+        final int X2 = 3, Y2 = 3;
+        final int X3 = 4, Y3 = 3;
+        final int X4 = 3, Y4 = 2;
+        final int X5 = 3, Y5 = 4;
 
         // the grid of Actors that maintains the state of the game
         //  (alive cells contains actors; dead cells do not)
         Grid<Actor> grid = world.getGrid();
         
-        // create and add rocks (a type of Actor) to the three intial locations
+        // create and add rocks (a type of Actor) to the nine intial locations
         Rock rock1 = new Rock();
         Location loc1 = new Location(Y1, X1);
         grid.put(loc1, rock1);
@@ -73,6 +75,14 @@ public class GameOfLife
         Rock rock3 = new Rock();
         Location loc3 = new Location(Y3, X3);
         grid.put(loc3, rock3);
+        
+        Rock rock4 = new Rock();
+        Location loc4 = new Location(Y4, X4);
+        grid.put(loc4, rock4);
+        
+        Rock rock5 = new Rock();
+        Location loc5 = new Location(Y5, X5);
+        grid.put(loc5, rock5);
     }
 
     /**
@@ -83,7 +93,7 @@ public class GameOfLife
      * @post    the world has been populated with a new grid containing the next generation
      * 
      */
-    private void createNextGeneration()
+    public void createNextGeneration()
     {
         /** You will need to read the documentation for the World, Grid, and Location classes
          *      in order to implement the Game of Life algorithm and leverage the GridWorld framework.
@@ -93,6 +103,14 @@ public class GameOfLife
         Grid<Actor> grid = world.getGrid();
         
         // insert magic here...
+//         for(int row = 1; row <= ROWS; rows++)
+//         {
+//             for (int col = 1; col <= COLS; col++)
+//             {
+//                 
+//                 
+//             }
+//         }
         
     }
     
