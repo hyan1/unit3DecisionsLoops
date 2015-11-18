@@ -4,6 +4,7 @@ import info.gridworld.actor.Rock;
 import info.gridworld.grid.Grid;
 import info.gridworld.grid.BoundedGrid;
 import info.gridworld.grid.Location;
+import java.util.ArrayList;
 
 /**
  * Game of Life starter code. Demonstrates how to create and populate the game using the GridWorld framework.
@@ -101,17 +102,36 @@ public class GameOfLife
         
         // create the grid, of the specified size, that contains Actors
         Grid<Actor> grid = world.getGrid();
-        
+        BoundedGrid<Actor> newGrid = new BoundedGrid<Actor>(ROWS, COLS);
         // insert magic here...
-//         for(int row = 1; row <= ROWS; rows++)
-//         {
-//             for (int col = 1; col <= COLS; col++)
-//             {
-//                 
-//                 
-//             }
-//         }
-        
+        for(int rows = 0; rows < ROWS; rows++)
+        {
+            for (int cols = 0; cols < COLS; cols++)
+            {
+                Location loc = new Location(rows, cols);
+                ArrayList neighbour = grid.getOccupiedAdjacentLocations(loc);
+                if( (neighbour.size() < 2) && (grid.get(loc) != null) )
+                {
+                    newGrid.remove(loc);
+                }
+                else if( (neighbour.size() == 3) && (grid.get(loc) == null) )
+                {
+                    Rock rock = new Rock();
+                    newGrid.put(loc, rock);
+                }
+                else if( (neighbour.size() > 3) && (grid.get(loc) == null) )
+                {
+                    newGrid.remove(loc);
+                }
+                else if( (neighbour.size() < 4) && (grid.get(loc) != null) )
+                {
+                    Rock rock = new Rock();
+                    newGrid.put(loc, rock);
+                }
+            }
+            world.setGrid(newGrid);
+            world.show();
+        }
     }
     
     /**
@@ -155,8 +175,15 @@ public class GameOfLife
      *
      */
     public static void main(String[] args)
+            throws InterruptedException
     {
         GameOfLife game = new GameOfLife();
+        int i = 1;
+        while (i == 1)
+        {
+            game.createNextGeneration();
+            Thread.sleep(1000);
+        }
     }
 
 }
